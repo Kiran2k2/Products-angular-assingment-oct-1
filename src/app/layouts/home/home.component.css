@@ -12,6 +12,31 @@
 .categorisContent {
     padding: 20px 20px;
 }
+h4{
+    font-size: 37px;
+  position: relative;
+  bottom: 330px;
+  left: 20px;
+}
+.explore-btn{
+    position: relative;
+    bottom: 300px;
+    left: 40px;
+    width: 120px;
+    font-size: 20px;
+    height: 40px;
+    text-decoration: none;
+    border: 2px #fff solid;
+    color: black;
+    background-color: transparent;
+    /* border: 2px solid red; */
+
+}
+.explore-btn:hover
+{
+    border: black 2px solid;
+    background-color: black;
+}
 
 .categorisContent img {
     object-fit: contain;

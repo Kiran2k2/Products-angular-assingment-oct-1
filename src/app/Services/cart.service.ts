@@ -27,10 +27,8 @@ export class CartService {
   }
 
   addToCart(product:CartItem){
-//     this.cartItems.push(product)
-//     console.log(this.cartItems);
-// this.updateCartTotals()
-console.log(product);
+    
+   console.log(product);
 
     const presentProduct=this.cartItems.findIndex((item)=>
       item.id ===product.id)
@@ -75,10 +73,6 @@ decreseCartQuantity(item:any){
       // this.removeItemCart(item.id)
       return null
    }
-    
-
-
-
     return ele
   }).filter(ele=>ele!==null)
  this.updateCartTotals()
@@ -96,12 +90,6 @@ increaseProductQuanty(item:any){
   })
   this.updateCartTotals()
 }
-
-
-
-
-
-
 
 
  removeItemCart(productId:number){

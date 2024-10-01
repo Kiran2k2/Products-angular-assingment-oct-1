@@ -11,7 +11,7 @@ export class CatagoryService {
   constructor(private http:HttpClient) { }
 
   
-getCatagoryProd(catagory:string):Observable<any>{
+getCatagoryProd(catagory:any):Observable<any>{
  return this.http.get<any>(`${this.cataUrl}${catagory}`)
 }
 

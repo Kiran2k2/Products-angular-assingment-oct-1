@@ -34,12 +34,7 @@ export class ProductsComponent implements OnInit {
     },error:(err)=>{
       console.log(err);
     }
-  
-  
-  
-  
-  
-  
+
   })}
 
   onViewDetails(product: any) {

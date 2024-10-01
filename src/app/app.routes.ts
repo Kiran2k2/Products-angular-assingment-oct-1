@@ -8,11 +8,12 @@ import { CartComponent } from './layouts/cart/cart.component';
 import { CatagoriesComponent } from './layouts/catagories/catagories.component';
 import { MenDataComponent } from './layouts/catagories/men-data/men-data.component';
 import { ElectronicsComponent } from './layouts/catagories/electronics/electronics.component';
-import { UserListComponent } from './layouts/user-list/user-list.component';
+
 import { SingleUserComponent } from './layouts/single-user/single-user.component';
 import { SignupComponent } from './Components/signup/signup.component';
-import { AddUserComponent } from './layouts/add-user/add-user.component';
+
 import { SearchProductComponent } from './layouts/search-product/search-product.component';
+import { ProductAgGridComponent } from './layouts/product-ag-grid/product-ag-grid.component';
 
 
 export const routes: Routes = [{
@@ -41,25 +42,21 @@ export const routes: Routes = [{
    path:'cartList',
    component:CartComponent
  },{
-   path:"productss/:catagory",
+   path:"productss/:category",
    component:MenDataComponent
  },{
   path:'productts/search',component:SearchProductComponent
  },
 {
    path:'users-list',
-   component:UserListComponent
+   component:ProductAgGridComponent
 },
 {
    path:'user/:id',
    component:SingleUserComponent
 
 },
-{
-  path:'userss/new-user',
-  component:AddUserComponent
 
-},
 {
    path:'**',
    component:ElectronicsComponent

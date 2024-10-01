@@ -15,17 +15,30 @@ export class HomeComponent {
     {
       id:1,
       img:"../../../assets/slide-02.jpg"
-    },
-    {
+    }
+   
+    ,{
       id:2,
-      img:"../../../assets/slide-03.jpg"
-    },{
+      img:"../../../assets/2.jpg"
+
+    },
+    
+    {
       id:3,
       img:"../../../assets/1.jpg"
     },{
       id:4,
-      img:"../../../assets/2.jpg",
+      img:"../../../assets/hero.png",
+      content:"Beautifully Crafted Modern Furniture",
+      button:"EXPLORE-NOW"
+     
     }
   ]
 
 }
+
+// {
+//   id:2,
+//   img:"../../../assets/slide-03.jpg"
+// },
+

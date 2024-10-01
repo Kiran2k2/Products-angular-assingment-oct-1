@@ -1,63 +1,80 @@
 import { Product, ProductResponse } from './../../../Model/products.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { HeaderComponent } from "../../header/header.component";
 import { CatagoriesComponent } from '../catagories.component';
 import { CatagoryService } from '../../../Services/catagory.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { catchError } from 'rxjs';
 import { CommonModule } from '@angular/common';
-// import { Product } from '../../../Model/products.model';
+import { CartService } from '../../../Services/cart.service';
+import { ApiProductsService } from '../../../Services/api-products.service';
+
 
 @Component({
   selector: 'app-men-data',
   standalone: true,
-  imports: [HeaderComponent,CommonModule],
+  imports: [HeaderComponent,CommonModule,RouterLink],
   templateUrl: './men-data.component.html',
   styleUrl: './men-data.component.css'
 })
 export class MenDataComponent implements OnInit {
 
 
-catagory:string | null=null
+// catagory:string | null=null
 
-product:Product[]=[]
+product:any
+
+routee=inject(ActivatedRoute)
 constructor(private catService:CatagoryService,
-  private routee:ActivatedRoute
+
+  private cart:CartService,
+  private apiProduct:ApiProductsService
 ){
 
 }
 
 ngOnInit() {
-  // console.log("hello");
+this.viewProduct()
   
   this.routee.params.subscribe({next:params => {
-      this.getCata(params['catagory']);
+      this.getCata(params['category']);
       }
   });
  
   }
 
 
-  getCata(cata:any){
-    
-    this.catService.getCatagoryProd(cata).pipe(catchError(error=>{
-      console.log(error);
-      return []
-    })).subscribe(res=>{
-      this.product=res.products
-      console.log(this.product);
-    })
-  
+  viewProduct(){
+   
+   const productId=this.routee.snapshot.paramMap.get('id')
 
-    // this.catService.getCatagoryProd(cata).subscribe({next:(res)=>{
-    //   console.log(res);
-    //   this.product=res
-    // },error:(err)=>{
-    //   console.log(err)
-    // }})
+    this.apiProduct.getSingleProduct(productId!).subscribe(res=>{
+      console.log(res);
+      console.log(productId);
+      this.product=res
+    })
+
+  }
+
+
+
+
+
+
+  getCata(cata:any){
+  
+    this.catService.getCatagoryProd(cata).subscribe({next:(res)=>{
+      console.log(res.products);
+      this.product=res.products
+    },error:(err)=>{
+      console.log(err)
+    }})
 }
 
-
+addToCart(){
+  this.cart.addToCart(this.product)
+  console.log(this.product);
+}
 
 
 

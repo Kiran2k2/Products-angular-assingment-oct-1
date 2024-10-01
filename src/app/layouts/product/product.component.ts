@@ -19,11 +19,12 @@ export class ProductComponent {
   route=inject(ActivatedRoute)
 product:any;
 updateTitle:string='';
+// updatePrice:number=0;
 isEditing:boolean=false;
 productId=this.route.snapshot.paramMap.get('id')
 
 
-  constructor(private http: HttpClient, 
+  constructor(
    
      private cartSer:CartService,
      private productApi:ApiProductsService,
@@ -36,6 +37,7 @@ productId=this.route.snapshot.paramMap.get('id')
         console.log(response  );
         this.product = response;
         this.updateTitle=this.product.title;
+        // this.updatePrice=this.product.price
       });
   }
 
@@ -59,8 +61,6 @@ updatedProd(){
 toggle(){
   this.isEditing=!this.isEditing
 }
-
-
 deletePro(){
 
   if(this.productId){
@@ -69,10 +69,7 @@ deletePro(){
 
     this.productApi.deleteProduct(this.productId!).subscribe({next:(res)=>{
       console.log("delete product",res)
-      
       this.router.navigateByUrl('/products')
-      
-     
       },error:(err)=>{
        console.log(err)
       }})

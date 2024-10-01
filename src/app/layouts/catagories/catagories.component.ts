@@ -28,18 +28,11 @@ export class CatagoriesComponent implements OnInit
      
    }
  onViewCatagory(product:any){
-  this.route.navigate(['product',product.catagory])
-  // this.route.navigateByUrl("product/:catagory")
+  // // this.route.navigate(['product',product.category])
+  // this.route.navigateByUrl("productss/:catagory")
 
  }
 
-//  onViewCatagory(): void {
-//   const category = this.act.snapshot.paramMap.get('category');
-//   if (category) {
-//     this.route.navigate(['/product', category]);
-//   } else {
-//     console.error('Category ID is undefined');
-//   }
-// }
+
 
 }

@@ -35,7 +35,7 @@
                                 <i class="fa fa-user"></i> Username 
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" routerLink="/users-list"><i class="fa fa-user"></i> User- Profile</a></li>
+                            <li><a class="dropdown-item" routerLink="/users-list"><i class="fa fa-user"></i>A-G Grid </a></li>
                             <li><a class="dropdown-item" ><i class="fa fa-list"></i> My Orders</a></li>
                             <li><a class="dropdown-item" ><i class="fa fa-heart"></i> My Wishlist</a></li>
                             <li><a class="dropdown-item" routerLink="/cartList" ><i class="fa fa-shopping-cart"></i> My Cart</a></li>
@@ -69,23 +69,51 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" >All Categories</a>
+                        
                     </li>
                     
                     <li class="nav-item">
                         <a class="nav-link" >Featured Products</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" routerLink="/productss/electronics">Electronics</a>
-                    </li> -->
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" routerLink="/productss/men's clothing">Men</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/productss/women's clothing">Women</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Electronics
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink="/productss/mobile-accessories">mobile-accessories </a></li>
+                        <li><a class="dropdown-item" routerLink="/productss/laptops">Laptop</a></li>
+                        <li><a class="dropdown-item" routerLink="/productss/smartphones">Smartphones</a></li>
+                        <li><a class="dropdown-item" routerLink="/productss/tablets" > Tablets</a></li>
+                      
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Men-collection
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink="/productss/mens-shirts">mens-shirts </a></li>
+                   
+                        <li><a class="dropdown-item" routerLink="/productss/mens-watches">mens-watches</a></li>
+                        <li><a class="dropdown-item" routerLink="/productss/mens-shoes" > mens-shoes</a></li>
+                       
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Women-collection
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink="/productss/womens-bags">womens-bags </a></li>
+                        <li><a class="dropdown-item" routerLink="/productss/womens-dresses">womens-dresses</a></li>
+                        <li><a class="dropdown-item" routerLink="/productss/womens-jewellery">womens-jewellery</a></li>
+                        <li><a class="dropdown-item" routerLink="/productss/womens-shoes" > womens-shoes</a></li>
+                 
+                        </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/productss/beauty" >Groceries</a>
+                        <a class="nav-link" routerLink="/productss/groceries" >Groceries</a>
                     </li>
                    
                 </ul>

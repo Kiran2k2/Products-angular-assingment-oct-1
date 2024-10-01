@@ -6,11 +6,28 @@ export interface ProductResponse{
 
 }
 export interface Product{
- id:number,
+ id:String,
  title:string,
+ description:string,
+ catagory:string,
  price:number,
+ discountPercentage:number,
+ brand:string,
  rating:number,
+ shippingInformation:string,
+ availabilityStatus:string,
+ returnPolicy:string,
+ thumbnail:string,
  images:string[]
+ reviews:[
+    {
+        rating:number,
+        comment:string,
+        date:string,
+        reviewrName:string,
+        reviewerEmail:string
+    }
+ ]
 
 
 

@@ -30,6 +30,9 @@ gap: 20px;
 a{
     text-decoration: none;
 }
+.header-tag{
+    text-align: center;
+}
 /* 
 .item img{
 width: 270px;
